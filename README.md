@@ -1,32 +1,36 @@
 # GDB2SQL - Conversion GDB vers Spatialite
 
-Outil de conversion de géodatabase ESRI (.gdb) vers Spatialite (.sqlite) avec préservation complète des métadonnées et optimisations de performance.
+**POC (Proof of Concept)** - Outil de conversion de géodatabase ESRI (.gdb) vers Spatialite (.sqlite) avec préservation des métadonnées et optimisations de performance.
 
-## 🎯 Fonctionnalités principales
+> ⚠️ **Note** : Ce projet est un prototype de démonstration. Il peut contenir des bugs et des limitations. Utilisez-le à vos propres risques.
 
-### Conversion complète
-- ✅ Conversion complète de géodatabase ESRI vers Spatialite
-- ✅ Préservation de toutes les couches, géométries et attributs
-- ✅ Support de la conversion d'une couche spécifique ou de toutes les couches
-- ✅ Validation des entrées et gestion d'erreurs robuste
+## 🎯 Fonctionnalités (POC)
+
+> **Note** : Cette section décrit les fonctionnalités implémentées dans ce POC. Certaines peuvent avoir des limitations ou nécessiter des améliorations.
+
+### Conversion
+- Conversion de géodatabase ESRI vers Spatialite
+- Préservation des couches, géométries et attributs
+- Support de la conversion d'une couche spécifique ou de toutes les couches
+- Validation basique des entrées
 
 ### 📊 Préservation des métadonnées
-- ✅ **Alias de champs** : Conservation des noms alternatifs des colonnes
-- ✅ **Domaines codés** : Préservation des alias de valeurs (code → description)
-- ✅ **Clés primaires** : Recréation des contraintes de clés primaires
-- ✅ **Triggers** : Préservation des triggers SQL (si disponibles)
+- **Alias de champs** : Conservation des noms alternatifs des colonnes (expérimental)
+- **Domaines codés** : Préservation des alias de valeurs via parsing XML (expérimental)
+- **Clés primaires** : Recréation basique des contraintes de clés primaires
+- **Triggers** : Support limité (les triggers ESRI ne sont généralement pas accessibles via GDAL)
 
 ### 🚀 Optimisations de performance
-- ✅ **Index spatiaux** : Création automatique (MUST HAVE - toujours activés)
-- ✅ **Mode optimisé par défaut** : Optimisations modérées (sécurité + performance)
-- ✅ **Mode fast-mode** : Optimisations agressives pour maximum de performance
-- ✅ **Multi-threading** : Conversion parallèle de plusieurs couches
+- **Index spatiaux** : Création automatique (toujours activés)
+- **Mode optimisé par défaut** : Optimisations modérées (sécurité + performance)
+- **Mode fast-mode** : Optimisations agressives (expérimental, risque de corruption)
+- **Multi-threading** : Support basique pour conversion parallèle
 
 ### 📈 Monitoring et logs
-- ✅ Logs détaillés avec horodatage et niveaux (INFO, DEBUG, WARNING, ERROR)
-- ✅ Barres de progression avec tqdm (globale et par couche)
-- ✅ Statistiques complètes de conversion (temps, taille, succès/échecs)
-- ✅ Monitoring non-bloquant des processus ogr2ogr
+- Logs avec horodatage et niveaux (INFO, DEBUG, WARNING, ERROR)
+- Barres de progression avec tqdm (globale et par couche)
+- Statistiques de conversion (temps, taille, succès/échecs)
+- Monitoring basique des processus ogr2ogr
 
 ## 📋 Prérequis
 
@@ -69,7 +73,7 @@ Les dépendances incluent :
 python gdb_to_spatialite.py Role_2024.gdb output.sqlite
 ```
 
-Cette commande convertit toutes les couches avec les optimisations par défaut et la préservation complète des métadonnées.
+Cette commande convertit toutes les couches avec les optimisations par défaut et la préservation des métadonnées (si disponibles).
 
 ## 📖 Exemples d'utilisation détaillés
 
@@ -197,7 +201,9 @@ python gdb_to_spatialite.py Role_2024.gdb output.sqlite --no-ogr2ogr
 
 ## 📊 Préservation des métadonnées
 
-L'outil préserve automatiquement toutes les métadonnées disponibles dans la géodatabase ESRI source.
+> **POC** : Cette fonctionnalité est expérimentale. L'extraction des métadonnées peut ne pas fonctionner pour toutes les géodatabases et peut avoir des limitations.
+
+L'outil tente de préserver les métadonnées disponibles dans la géodatabase ESRI source.
 
 ### Alias de champs
 
@@ -244,7 +250,7 @@ WHERE table_name = 'b05ex1_b05v_repar_fisc'
 ORDER BY code;
 ```
 
-**Note** : L'extraction des domaines utilise le parsing automatique du fichier catalogue XML de la géodatabase (`a00000004.gdbtable` ou similaire), garantissant une extraction complète même si GDAL ne fournit pas toutes les informations.
+**Note (POC)** : L'extraction des domaines utilise le parsing automatique du fichier catalogue XML de la géodatabase (`a00000004.gdbtable` ou similaire). Cette méthode est expérimentale et peut ne pas fonctionner pour toutes les structures de géodatabase.
 
 ### Clés primaires
 
@@ -310,7 +316,9 @@ Les index spatiaux sont créés via l'option ogr2ogr `SPATIAL_INDEX=YES` et sont
 
 ## 🔧 Architecture et conception
 
-Le script respecte les principes SOLID et les bonnes pratiques de développement :
+> **POC** : Cette section décrit l'architecture cible du projet. L'implémentation peut avoir des limitations.
+
+Le script tente de respecter les principes SOLID et les bonnes pratiques de développement :
 
 ### Principes SOLID
 
@@ -429,4 +437,6 @@ Ce projet est fourni tel quel, sans garantie.
 
 ---
 
-**GDB2SQL** - Conversion de géodatabases ESRI vers Spatialite avec préservation complète des métadonnées et optimisations de performance.
+**GDB2SQL** - POC de conversion de géodatabases ESRI vers Spatialite.
+
+> ⚠️ **Avertissement** : Ce projet est un prototype de démonstration. Il peut contenir des bugs, des limitations et des fonctionnalités non testées. Utilisez-le à vos propres risques et vérifiez toujours les résultats de conversion.

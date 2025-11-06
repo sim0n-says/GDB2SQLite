@@ -1,15 +1,39 @@
 # Dépendances pour la conversion GDB vers Spatialite
 # Installation: pip install -r requirements.txt
 
-# GDAL pour la manipulation de données géospatiales
-# Note: Sur certaines distributions, GDAL doit être installé via le gestionnaire de paquets système
-# Ubuntu/Debian: sudo apt-get install python3-gdal gdal-bin
-# macOS: brew install gdal
-# Windows: Télécharger depuis https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
+# ============================================================================
+# Dépendances principales (obligatoires)
+# ============================================================================
 
-# Si installation via pip ne fonctionne pas, utilisez:
-# conda install -c conda-forge gdal
-
+# GDAL (Geospatial Data Abstraction Library)
+# Note importante: GDAL est souvent mieux installé via le gestionnaire de paquets système
+# plutôt que via pip pour éviter les problèmes de dépendances binaires.
+#
+# Options d'installation recommandées:
+# - Ubuntu/Debian: sudo apt-get install python3-gdal gdal-bin
+# - macOS: brew install gdal
+# - Windows: conda install -c conda-forge gdal
+# - Alternative: pip install gdal (peut nécessiter des compilateurs)
+#
+# Version minimale: 3.0.0 (pour support OpenFileGDB et fonctionnalités modernes)
 gdal>=3.0.0
-tqdm>=4.60.0
 
+# Barres de progression pour l'affichage du statut de conversion
+# Utilisé pour afficher la progression globale et par couche
+tqdm>=4.60.0,<6.0.0
+
+# ============================================================================
+# Notes d'installation
+# ============================================================================
+#
+# Si l'installation de GDAL via pip échoue:
+# 1. Installez d'abord GDAL via le gestionnaire de paquets système
+# 2. Puis installez les dépendances Python: pip install -r requirements.txt
+#
+# Alternative avec conda (recommandé pour Windows):
+# conda create -n gdb2sql -c conda-forge gdal tqdm
+# conda activate gdb2sql
+#
+# Vérification de l'installation:
+# python -c "from osgeo import gdal, ogr; print('GDAL version:', gdal.__version__)"
+# python -c "from tqdm import tqdm; print('tqdm installé')"
