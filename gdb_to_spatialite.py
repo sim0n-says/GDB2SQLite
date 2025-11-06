@@ -5,6 +5,10 @@ Script de conversion de géodatabase ESRI (.gdb) vers Spatialite.
 Ce script convertit une géodatabase ESRI en base de données Spatialite
 en préservant toutes les couches, géométries et attributs.
 Amélioré avec logs détaillés, progression et multi-threading.
+
+Author: Simon Bédard
+Contact: software@servicesforestiers.tech
+License: Unlicense (Public Domain)
 """
 
 import argparse

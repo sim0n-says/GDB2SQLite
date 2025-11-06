@@ -433,10 +433,36 @@ Conversion: 100%|██████████| 1/1 [00:17<00:00, 17.45s/couche
 
 ## 📄 Licence
 
-Ce projet est fourni tel quel, sans garantie.
+Ce projet est distribué sous la licence **Unlicense** (domaine public).
+
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+### Licences des dépendances
+
+Ce projet utilise les bibliothèques suivantes :
+
+- **GDAL/OGR** : Licence MIT ([source](https://gdal.org/))
+- **SQLite** : Domaine public ([source](https://www.sqlite.org/))
+- **Spatialite** : MPL/GPL/LGPL ([source](https://www.gaia-gis.it/fossil/libspatialite/))
+- **tqdm** : Licence MIT ([source](https://github.com/tqdm/tqdm))
+
+### Pourquoi Unlicense ?
+
+La licence Unlicense a été choisie car :
+- ✅ **Maximum de liberté** : Domaine public, aucune restriction d'utilisation
+- ✅ **Compatible** : Compatible avec toutes les licences (MIT, GPL, MPL, etc.)
+- ✅ **Simple** : Aucune attribution requise (bien que recommandée)
+- ✅ **Idéal pour un POC** : Permet la réutilisation totale sans contrainte
+- ✅ **Aligné avec SQLite** : Même philosophie que SQLite (domaine public)
+
+**Note** : L'Unlicense place le code dans le domaine public. Certaines juridictions peuvent avoir des règles différentes concernant le "domaine public" par déclaration. Pour un POC, c'est une excellente option pour maximiser la liberté d'utilisation.
 
 ---
 
 **GDB2SQL** - POC de conversion de géodatabases ESRI vers Spatialite.
+
+**Author** : Simon Bédard  
+**Contact** : software@servicesforestiers.tech  
+**License** : Unlicense (Public Domain)
 
 > ⚠️ **Avertissement** : Ce projet est un prototype de démonstration. Il peut contenir des bugs, des limitations et des fonctionnalités non testées. Utilisez-le à vos propres risques et vérifiez toujours les résultats de conversion.
