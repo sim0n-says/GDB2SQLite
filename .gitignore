@@ -1,0 +1,44 @@
+# Géodatabases ESRI
+*.gdb/
+*.gdb
+
+# Fichiers Spatialite de test
+test_*.sqlite
+test_*.db
+*_perf*.sqlite
+*_perf*.db
+*_spatial*.sqlite
+*_spatial*.db
+
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environnements virtuels
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.cache
+

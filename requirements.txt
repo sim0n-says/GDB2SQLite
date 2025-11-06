@@ -1,0 +1,15 @@
+# Dépendances pour la conversion GDB vers Spatialite
+# Installation: pip install -r requirements.txt
+
+# GDAL pour la manipulation de données géospatiales
+# Note: Sur certaines distributions, GDAL doit être installé via le gestionnaire de paquets système
+# Ubuntu/Debian: sudo apt-get install python3-gdal gdal-bin
+# macOS: brew install gdal
+# Windows: Télécharger depuis https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
+
+# Si installation via pip ne fonctionne pas, utilisez:
+# conda install -c conda-forge gdal
+
+gdal>=3.0.0
+tqdm>=4.60.0
+
