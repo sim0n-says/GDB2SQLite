@@ -461,8 +461,8 @@ La licence Unlicense a été choisie car :
 
 **GDB2SQL** - POC de conversion de géodatabases ESRI vers Spatialite.
 
-**Author** : Simon Bédard  
+**Auteur** : Simon Bédard  
 **Contact** : software@servicesforestiers.tech  
-**License** : Unlicense (Public Domain)
+**Licence** : Unlicense (Domaine public)
 
 > ⚠️ **Avertissement** : Ce projet est un prototype de démonstration. Il peut contenir des bugs, des limitations et des fonctionnalités non testées. Utilisez-le à vos propres risques et vérifiez toujours les résultats de conversion.
