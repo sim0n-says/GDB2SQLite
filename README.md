@@ -455,7 +455,7 @@ La licence Unlicense a été choisie car :
 - ✅ **Idéal pour un POC** : Permet la réutilisation totale sans contrainte
 - ✅ **Aligné avec SQLite** : Même philosophie que SQLite (domaine public)
 
-**Note** : L'Unlicense place le code dans le domaine public. Certaines juridictions peuvent avoir des règles différentes concernant le "domaine public" par déclaration. Pour un POC, c'est une excellente option pour maximiser la liberté d'utilisation.
+**Note** : L'Unlicense place le code dans le domaine public. Certaines juridictions peuvent avoir des règles différentes concernant le "domaine public" par déclaration.
 
 ---
 
